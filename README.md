@@ -46,3 +46,12 @@ You can access endpoints and make requests to the application.
 
 If you found a bug or want to improve the application, feel free to create
 an [issue](https://github.com/springbootcourses/cqrs-banking-app/issues).
+
+1 run.sh - для создания или обновления коннектора(json)
+2 в postgres
+command:
+- "postgres"
+- "-c"
+- "wal_level=logical"
+
+controller->service->CQ->event(create)->repo(WAL)->debezium(connector)->kafka->consumer(eventHandlerModule)->db

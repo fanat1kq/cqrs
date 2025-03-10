@@ -54,7 +54,7 @@ services:
   postgres:
     image: 'postgres:15.1-alpine'
     ports:
-      - "5437:5432"
+      - "5432:5432"
     env_file:
       - .env
     command:
@@ -107,10 +107,10 @@ services:
       - OFFSET_STORAGE_TOPIC=my_connect_offsets
       - STATUS_STORAGE_TOPIC=my_connect_statuses
     user: root
-#    command:
-#      - bash
-#      - -c
-#      - "cd /on-startup; ls; ./run.sh"
+    #    command:
+    #      - bash
+    #      - -c
+    #      - "cd /on-startup; ls; ./run.sh"
     networks:
       - banking
     volumes:
